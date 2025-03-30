@@ -1,6 +1,6 @@
-# Proyecto de Regresión Lineal
+# Clasificacion de candidatos mediante Regresión Logistica con Sci Kit Learn
 
-Este proyecto implementa un modelo de **regresión lineal** utilizando la librería **Scikit-learn** en Python. El modelo predice el precio de una casa en función de su tamaño (en metros cuadrados). Este es un ejemplo básico para comprender cómo funciona la regresión lineal en el contexto de machine learning.
+Este proyecto implementa un modelo de **regresión logistica** utilizando la librería **Scikit-learn** en Python. El modelo predice si un candidato postulado es apto para la postulación de trabajo basandose en el entrenamiento recibido por el set de datos **candidatos.xslx**.
 
 ## Requisitos
 
@@ -11,6 +11,7 @@ Este proyecto requiere Python 3.8 o superior. Las dependencias necesarias se pue
 - `numpy`
 - `matplotlib`
 - `scikit-learn`
+- `pandas`
 
 ## Instalación
 
@@ -19,3 +20,13 @@ Este proyecto requiere Python 3.8 o superior. Las dependencias necesarias se pue
    ```bash
    git clone <url-del-repositorio>
    cd <nombre-del-repositorio>
+
+2. Instala las dependencias
+
+   ```bash
+   pip install -r requirements.txt
+
+3. Ejecuta el modelo
+
+   ```bash
+   py clasificacion-candidatos-model.py
