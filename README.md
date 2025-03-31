@@ -1,6 +1,6 @@
-# Clasificacion de candidatos mediante Regresión Logistica con Sci Kit Learn
+# Clasificacion de candidatos mediante Arbol de Desicion con Sci Kit Learn
 
-Este proyecto implementa un modelo de **regresión logistica** utilizando la librería **Scikit-learn** en Python. El modelo predice si un candidato postulado es apto para la postulación de trabajo basandose en el entrenamiento recibido por el set de datos **candidatos.xslx**.
+Este proyecto implementa un modelo de **Arbol de Desicion** utilizando la librería **Scikit-learn** en Python. El modelo predice si un candidato postulado es apto para la postulación de trabajo basandose en el entrenamiento recibido por el set de datos **candidatos.xslx**.
 
 ## Requisitos
 
