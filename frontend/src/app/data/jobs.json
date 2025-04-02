@@ -1,0 +1,23 @@
+[
+    {
+      "title": "Desarrollador Python Backend",
+      "company": "Tech Solutions",
+      "location": "Remoto",
+      "description": "Buscamos un desarrollador Python con experiencia en FastAPI y PostgreSQL.",
+      "active": true
+    },
+    {
+      "title": "Ingeniero de Datos con Python",
+      "company": "DataCorp",
+      "location": "Madrid, España",
+      "description": "Se requiere experiencia en Pandas, SQL y arquitecturas de datos escalables.",
+      "active": true
+    },
+    {
+      "title": "Desarrollador Fullstack Python/Django",
+      "company": "Web Innovators",
+      "location": "Ciudad de México, México",
+      "description": "Desarrollo de aplicaciones web con Django y React.",
+      "active": false
+    }
+]
