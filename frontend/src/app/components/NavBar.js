@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function NavBar() {
     return (
@@ -11,7 +12,9 @@ export default function NavBar() {
                 className="h-auto"
             />
 
-            <p className="font-bold text-xl">Inicio</p>
+            <Link href="/" className="font-bold text-xl text-white hover:underline">
+                Inicio
+            </Link>
         </div>
-    )
+    );
 }
