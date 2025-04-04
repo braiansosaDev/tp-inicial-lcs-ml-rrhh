@@ -1,9 +1,11 @@
-import OfertaDetail from "@/app/components/OfertaDetail";
+import OfertaDetail from "@/app/components/OfertaDetalle";
 
-export default function OfertaDetailPage({params}) {
+export default async function DetalleOfertaPage({params}) {
+  const {id} = await params;
+
   return (
     <div className="min-h-screen bg-white p-10">
-      <OfertaDetail id={params.id} />
+      <OfertaDetail id={id} />
     </div>
   );
 }

@@ -13,9 +13,21 @@ export default function Home() {
             key={index}
             className="p-6 border border-cyan-800 rounded-xl shadow-lg hover:shadow-xl transition"
           >
-            <h2 className="text-2xl font-semibold text-cyan-700">
-              {job.title}
-            </h2>
+            <div className="flex justify-between items-center">
+              <h2 className="text-2xl font-semibold text-cyan-700">
+                {job.title}
+              </h2>
+
+              {job.active ? (
+                <div className="rounded-full ml-2 flex justify-center items-center bg-green-100 py-0.5 px-2.5 border border-transparent text-sm text-green-800 transition-all shadow-sm">
+                  Abierta
+                </div>
+              ) : (
+                <div className="rounded-full ml-2 flex justify-center items-center bg-red-100 py-0.5 px-2.5 border border-transparent text-sm text-red-800 transition-all shadow-sm">
+                  Cerrada
+                </div>
+              )}
+            </div>
             <p className="text-gray-700 font-medium">
               {job.company} - {job.location}
             </p>

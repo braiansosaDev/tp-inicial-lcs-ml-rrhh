@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function ApplyOfertaForm({ jobDetails }) {
+export default function AplicarOfertaForm({ jobDetails }) {
   const [formData, setFormData] = useState({ name: "", email: "", resume: "" });
   const [applied, setApplied] = useState(false);
   const handleChange = (e) => {
@@ -33,9 +33,9 @@ export default function ApplyOfertaForm({ jobDetails }) {
             <label className="text-black">Nombre completo</label>
             <input
               type="text"
-              name="name"
+              name="nombre"
               placeholder="Tu Nombre"
-              value={formData.name}
+              value={formData.nombre}
               onChange={handleChange}
               className="w-full p-2 border border-gray-300 rounded-lg"
               required
@@ -53,8 +53,8 @@ export default function ApplyOfertaForm({ jobDetails }) {
             />
 
             <label className="text-black">Nivel educativo maximo alcanzado</label>
-            <select className="w-full p-2 border border-gray-300 rounded-lg">
-              <option value="" selected disabled>
+            <select name="nivel_educativo" className="w-full p-2 border border-gray-300 rounded-lg">
+              <option value="" disabled>
                 Seleccione
               </option>
               <option value="secundario" selected disabled>

@@ -1,9 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
 import jobs from "@/app/data/jobs";
-import ApplyOfertaForm from "./ApplyOfertaForm";
+import AplicarOfertaForm from "./AplicarOfertaForm";
 
-export default function OfertaDetail({ id }) {
+export default function OfertaDetalle({ id }) {
   const [jobDetails, setJobDetails] = useState(null);
   const [formPostularseIsVisible, setFormPostularIsVisible] = useState(false);
 
@@ -31,7 +31,7 @@ export default function OfertaDetail({ id }) {
   return (
     <div className="min-h-screen bg-white p-10">
       {formPostularseIsVisible ? (
-        <ApplyOfertaForm onCancel={handleCancelarPostulacion} jobDetails={jobDetails} />
+        <AplicarOfertaForm onCancel={handleCancelarPostulacion} jobDetails={jobDetails} />
       ) : (
         <div className="max-w-2xl mx-auto p-6 border border-cyan-800 rounded-xl shadow-lg">
           <h1 className="text-4xl font-bold text-cyan-800">{jobDetails.title}</h1>
