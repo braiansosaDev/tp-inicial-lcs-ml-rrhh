@@ -5,6 +5,7 @@ class Candidato(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(100), nullable=False)
     anios_experiencia = db.Column(db.Integer, nullable=False)
+    nivel_educativo = db.Column(db.String(50), nullable=False)
     habilidades = db.Column(db.String(150), nullable=False)
     idiomas = db.Column(db.String(100), nullable=False)
     expectativa_salarial = db.Column(db.Float, nullable=False)
@@ -16,6 +17,7 @@ class Candidato(db.Model):
             "id": self.id,
             "nombre": self.nombre,
             "anios_experiencia": self.anios_experiencia,
+            "nivel_educativo": self.nivel_educativo,
             "habilidades": self.habilidades,
             "idiomas": self.idiomas,
             "expectativa_salarial": self.expectativa_salarial,

@@ -24,7 +24,7 @@ export default function AplicantesOfertaTable() {
 
   const handleEvaluarPostulantesIA = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/evaluar-candidatos-ia");
+      const response = await axios.post("http://localhost:5000/candidatos/evaluar-candidatos");
 
       if (response.status == 200) {
         fetchPostulantes();
