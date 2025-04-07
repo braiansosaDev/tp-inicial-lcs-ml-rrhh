@@ -1,8 +1,9 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_cors import CORS  # 👈 Importa CORS
 from .config import Config
 
-#Inicializa la base de datos
+# Inicializa la base de datos
 db = SQLAlchemy()
 
 def create_app():
@@ -10,6 +11,9 @@ def create_app():
     app.config.from_object(Config)
 
     db.init_app(app)
+
+    # Habilita CORS para toda la aplicación
+    CORS(app)  # 👈 Agrega esta línea
 
     from .routes import bp as main_bp
     app.register_blueprint(main_bp)

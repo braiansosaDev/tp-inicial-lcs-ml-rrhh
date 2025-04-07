@@ -1,12 +1,47 @@
-import postulantes from "@/app/data/postulantes";
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { IoSparklesOutline } from "react-icons/io5";
 
 export default function AplicantesOfertaTable() {
+  const [postulantes, setPostulantes] = useState([]);
+
+  const fetchPostulantes = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/candidatos");
+
+      if (response.status == 200) {
+        setPostulantes(response.data);
+        
+      }
+    } catch (e) {
+      alert("Ocurrio un error al traer los candidatos: ", e);
+    }
+  }
+
+  useEffect(() => {
+    fetchPostulantes();
+  }, []);
+
+  const handleEvaluarPostulantesIA = async () => {
+    try {
+      const response = await axios.post("http://localhost:5000/evaluar-candidatos-ia");
+
+      if (response.status == 200) {
+        fetchPostulantes();
+      }
+    } catch (e) {
+      alert("Ocurrio un error al evaluar los candidatos con IA: ", e);
+    }
+  }
+
   return (
     <div>
       <div className="flex justify-between mb-2">
         <h1 className="text-4xl font-bold text-gray-600 mb-6">Postulantes</h1>
-        <button className="px-4 py-4 flex items-center gap-2 rounded-full border border-cyan-700 text-cyan-700 hover:bg-gray-100 hover:cursor-pointer">
+        <button 
+          className="px-4 py-4 flex items-center gap-2 rounded-full border border-cyan-700 text-cyan-700 hover:bg-gray-100 hover:cursor-pointer"
+          onClick={handleEvaluarPostulantesIA}
+        >
           Evaluar con IA
           <IoSparklesOutline />
         </button>
@@ -27,7 +62,7 @@ export default function AplicantesOfertaTable() {
         </thead>
         <tbody>
           {postulantes.map((postulante, index) => (
-            <tr className="border-b border-gray-200 text-gray-600">
+            <tr key={postulante.id} className="border-b border-gray-200 text-gray-600">
               <td className="text-center px-4 py-2">
                 {postulante.id}
               </td>

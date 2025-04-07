@@ -1,16 +1,36 @@
+import axios from "axios";
 import { useState } from "react";
 
 export default function AplicarOfertaForm({ jobDetails }) {
-  const [formData, setFormData] = useState({ name: "", email: "", resume: "" });
+  const [formData, setFormData] = useState({
+    nombre: "",
+    anios_experiencia: "",
+    nivel_educativo: "",
+    habilidades: "",
+    idiomas: "",
+    expectativa_salarial: "",
+    email: "",
+  });  
   const [applied, setApplied] = useState(false);
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert(`Postulación enviada para ${jobDetails?.title}`);
-    setApplied(true);
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/candidatos",
+        formData
+      );
+
+      if (response.status == 201) {
+        alert(`Postulación enviada para ${jobDetails?.title}`);
+        setApplied(true);
+      }
+    } catch (e) {
+      alert("Ocurrio un error al postularse: ", e.message);
+    }
   };
 
   return (
@@ -52,20 +72,22 @@ export default function AplicarOfertaForm({ jobDetails }) {
               required
             />
 
-            <label className="text-black">Nivel educativo maximo alcanzado</label>
-            <select name="nivel_educativo" className="w-full p-2 border border-gray-300 rounded-lg">
+            <label className="text-black">
+              Nivel educativo máximo alcanzado
+            </label>
+            <select
+              name="nivel_educativo"
+              value={formData.nivel_educativo || ""}
+              onChange={handleChange}
+              className="w-full p-2 border border-gray-300 rounded-lg"
+              required
+            >
               <option value="" disabled>
                 Seleccione
               </option>
-              <option value="secundario" selected disabled>
-                Secundario
-              </option>
-              <option value="universitario" selected disabled>
-                Universitario
-              </option>
-              <option value="terciario" selected disabled>
-                Terciario
-              </option>
+              <option value="secundario">Secundario</option>
+              <option value="universitario">Universitario</option>
+              <option value="terciario">Terciario</option>
             </select>
 
             <label className="text-black">Habilidades</label>
