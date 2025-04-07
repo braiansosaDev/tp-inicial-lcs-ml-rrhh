@@ -5,12 +5,11 @@ Este proyecto implementa un modelo de **Arbol de Decision** utilizando la librer
 ## Requisitos
 
 ### Backend
-Este proyecto requiere Python 3.8 o superior. Las dependencias necesarias se pueden instalar utilizando el archivo `requirements.txt`.
+Este proyecto requiere Python 3.8 o superior. Las dependencias necesarias se instalan al ejecutar start-windows.bat o start-linux.sh.
 
 ### Frontend
-Este proyecto requiere Node 20 o superior. Descargue desde  `https://nodejs.org/es/download`.
+Este proyecto requiere Node 20 o superior. Descargue desde  `https://nodejs.org/es/download`. Las dependencias necesarias se instalan al ejecutar start-windows.bat o start-linux.sh.
 
-Antes de ejecutar `start-windows.bat` o `start-linux.sh` primero se deben instalar las dependencias con NPM mediante `cd frontend && npm install`. 
 
 ## Instalación
 
@@ -20,12 +19,4 @@ Antes de ejecutar `start-windows.bat` o `start-linux.sh` primero se deben instal
    git clone <url-del-repositorio>
    cd <nombre-del-repositorio>
 
-2. Instala las dependencias
-
-   ```bash
-   pip install -r requirements.txt
-
-   ```bash
-   npm install
-
-3. Abre el ejecutable start-linux.sh o start-windows.bat
+3. Abre el ejecutable start-linux.sh o start-windows.bat. El mismo realiza la instalación de dependencias y ejecución de los programas.
